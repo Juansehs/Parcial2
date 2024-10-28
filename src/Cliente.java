@@ -7,7 +7,8 @@ public class Cliente extends Producto {
     private String nombre;
     private String correo;
     List<String> Productoscomprados = new ArrayList<>();
-
+    List<String> laptosdisponibles = new ArrayList<>();
+    List<String> celularesdisponibles = new ArrayList<>();
     public Cliente() {
     }
 
@@ -61,7 +62,11 @@ while (true){
     System.out.println("Bienvenido ¿que deseas comprar? \n(1) Laptop \n(2) Celular");
   switch (opcionmenu){
       case 1:
-          System.out.println("Los Productos disponible son "+getCantidadstock());
+          System.out.println("Los Productos disponible en laptop son "+getCantidadstock());
+          for (int i=0; i<laptosdisponibles.size();i++);
+      case 2 :
+          System.out.println("Los Productos diposnibles en Celulares son :"+getCantidadstock());
+          for (int i=0; i<celularesdisponibles.size();i++);
     }
 }
 
@@ -69,6 +74,6 @@ while (true){
 
     @Override
     void mostradetalles() {
-        System.out.println("Usted compro ");
+        System.out.println("Usted compro "+getProductoscomprados());
     }
 }

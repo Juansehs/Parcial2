@@ -5,6 +5,7 @@ public class Celular  extends Producto implements Vendible{
     private String resoluciondecamara;
     private int cantidad;
 
+
     public Celular(String capacidadebateria, String resoluciondecamara) {
         this.capacidadebateria = capacidadebateria;
         this.resoluciondecamara = resoluciondecamara;
