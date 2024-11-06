@@ -2,14 +2,14 @@ public class Laptop extends Producto implements Vendible {
     private String memoriaRAM;
     private String procesador;
 
-    // Constructor
+
     public Laptop(String nombre, String marca, double precio, int cantidadStock, String memoriaRAM, String procesador) {
         super(nombre, marca, precio, cantidadStock);
         this.memoriaRAM = memoriaRAM;
         this.procesador = procesador;
     }
 
-    // Getters y Setters
+
     public String getMemoriaRAM() {
         return memoriaRAM;
     }
@@ -41,7 +41,7 @@ public class Laptop extends Producto implements Vendible {
     public double preciodeventa(int cantidad) {
         double totalVenta = cantidad * getPrecio();
         if (cantidad > 5) {
-            totalVenta *= 0.9; // Aplicar descuento del 10%
+            totalVenta *= 0.10;
             System.out.println("Descuento del 10% aplicado.");
         }
         return totalVenta;

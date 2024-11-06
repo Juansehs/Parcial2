@@ -4,14 +4,14 @@ public class Celular extends Producto implements Vendible {
     private int capacidadBateria;
     private String resolucionCamara;
 
-    // Constructor completo
+
     public Celular(String nombre, String marca, double precio, int cantidadStock, int capacidadBateria, String resolucionCamara) {
         super(nombre, marca, precio, cantidadStock);
         this.capacidadBateria = capacidadBateria;
         this.resolucionCamara = resolucionCamara;
     }
 
-    // Getters y Setters
+
     public int getCapacidadBateria() {
         return capacidadBateria;
     }

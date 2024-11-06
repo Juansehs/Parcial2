@@ -4,7 +4,7 @@ public abstract class Producto {
     private double precio;
     private int cantidadStock;
 
-    // Constructor completo
+
     public Producto(String nombre, String marca, double precio, int cantidadStock) {
         this.nombre = nombre;
         this.marca = marca;
@@ -12,7 +12,6 @@ public abstract class Producto {
         this.cantidadStock = cantidadStock;
     }
 
-    // Getters y Setters
     public String getNombre() {
         return nombre;
     }

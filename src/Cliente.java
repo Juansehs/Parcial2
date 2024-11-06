@@ -6,14 +6,14 @@ public class Cliente {
     private String correo;
     private List<Producto> productosComprados;
 
-    // Constructor
+
     public Cliente(String nombre, String correo) {
         this.nombre = nombre;
         this.correo = correo;
         this.productosComprados = new ArrayList<>();
     }
 
-    // Getters y Setters
+
     public String getNombre() {
         return nombre;
     }

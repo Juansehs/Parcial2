@@ -9,8 +9,10 @@ import java.util.List;
             }
 
             public static void main(String[] args) {
-                // Crear algunos productos
-                Laptop laptop1 = new Laptop("Laptop Dell XPS", "Dell", 1200.0,  10, "16Gb", "Intel Core i7");
+
+
+
+                Laptop laptop1 = new Laptop("Laptop lOQ", "lenovo", 1200.0,  10, "16Gb", "Intel Core i7");
                 Laptop laptop2=new Laptop("Asus","Zenboook",600.000,8,"32GB","Intel Core 8");
                 Celular celular1 = new Celular("iPhone 13", "Apple", 800.0, 15, 4000, "12MP");
                 Celular celular2 = new Celular("Samsung Galaxy S21", "Samsung", 750.0, 20, 4500, "108MP");
