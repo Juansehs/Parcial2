@@ -2,19 +2,17 @@ public abstract class Producto {
     private String nombre;
     private String marca;
     private double precio;
-    private int cantidadstock;
-    private int cantidad;
+    private int cantidadStock;
 
-    public Producto() {
-    }
-
-    public Producto(String nombre, String marca, double precio, int cantidadstock) {
+    // Constructor completo
+    public Producto(String nombre, String marca, double precio, int cantidadStock) {
         this.nombre = nombre;
         this.marca = marca;
         this.precio = precio;
-        this.cantidadstock = cantidadstock;
+        this.cantidadStock = cantidadStock;
     }
 
+    // Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -39,13 +37,15 @@ public abstract class Producto {
         this.precio = precio;
     }
 
-    public int getCantidadstock() {
-        return cantidadstock;
+    public int getCantidadStock() {
+        return cantidadStock;
     }
 
-    public void setCantidadstock(int cantidadstock) {
-        this.cantidadstock = cantidadstock;
+    public void setCantidadStock(int cantidadStock) {
+        this.cantidadStock = cantidadStock;
     }
-    abstract void mostradetalles ();
+
+    // Metodos abstractos//
+    public abstract void mostrarDetalles();
+    public abstract void preciodeventa();
 }
-

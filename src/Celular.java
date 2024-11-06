@@ -1,52 +1,52 @@
 import java.util.Scanner;
 
-public class Celular  extends Producto implements Vendible{
-    private String capacidadebateria;
-    private String resoluciondecamara;
-    private int cantidad;
+public class Celular extends Producto implements Vendible {
+    private int capacidadBateria;
+    private String resolucionCamara;
 
-
-    public Celular(String capacidadebateria, String resoluciondecamara) {
-        this.capacidadebateria = capacidadebateria;
-        this.resoluciondecamara = resoluciondecamara;
+    // Constructor completo
+    public Celular(String nombre, String marca, double precio, int cantidadStock, int capacidadBateria, String resolucionCamara) {
+        super(nombre, marca, precio, cantidadStock);
+        this.capacidadBateria = capacidadBateria;
+        this.resolucionCamara = resolucionCamara;
     }
 
-    public Celular(String nombre, String marca, double precio, int cantidadstock, String capacidadebateria, String resoluciondecamara) {
-        super(nombre, marca, precio, cantidadstock);
-        this.capacidadebateria = capacidadebateria;
-        this.resoluciondecamara = resoluciondecamara;
+    // Getters y Setters
+    public int getCapacidadBateria() {
+        return capacidadBateria;
     }
 
-    public String getCapacidadebateria() {
-        return capacidadebateria;
+    public void setCapacidadBateria(int capacidadBateria) {
+        this.capacidadBateria = capacidadBateria;
     }
 
-    public void setCapacidadebateria(String capacidadebateria) {
-        this.capacidadebateria = capacidadebateria;
+    public String getResolucionCamara() {
+        return resolucionCamara;
     }
 
-    public String getResoluciondecamara() {
-        return resoluciondecamara;
-    }
-
-    public void setResoluciondecamara(String resoluciondecamara) {
-        this.resoluciondecamara = resoluciondecamara;
+    public void setResolucionCamara(String resolucionCamara) {
+        this.resolucionCamara = resolucionCamara;
     }
 
     @Override
-    void mostradetalles() {
-        System.out.println("el producto es: "+getNombre()+"La marca es "+getMarca()
-                +"su precio es:"+getPrecio()+"la cantidad disponible es de :"+getCantidadstock()+"Tiene por definicion en camara"+getResoluciondecamara()+"Megapixeles"+"y "+getCapacidadebateria()+"de Capacidad de bateria");
+    public void mostrarDetalles() {
+        System.out.println("Producto: " + getNombre() + ", Marca: " + getMarca() +
+                ", Precio: $" + getPrecio() + ", Cantidad en stock: " + getCantidadStock() +
+                ", Resolución de cámara: " + getResolucionCamara() +
+                " MP, Capacidad de batería: " + getCapacidadBateria() + " mAh");
     }
 
     @Override
     public void preciodeventa() {
-        System.out.println("¿Cuantas unidades quieres comprar?");
-        Scanner input = new Scanner(System.in);
-        cantidad = input.nextInt();
-        double totaldeventa;
-        totaldeventa = cantidad * getPrecio();
-        if (cantidad > 5)
-            System.out.println("Tienes un 10% de descuento disponible por lo tanto te queda en:" + totaldeventa * 0.10);
-    }}
 
+    }
+
+    public double preciodeventa(int cantidad) {
+        double totalVenta = cantidad * getPrecio();
+        if (cantidad > 5) {
+            totalVenta *= 0.9;
+            System.out.println("Descuento del 10% aplicado.");
+        }
+        return totalVenta;
+    }
+}

@@ -1,38 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Cliente extends Producto {
+public class Cliente {
     private String nombre;
     private String correo;
-    List<String> Productoscomprados = new ArrayList<>();
-    List<String> laptosdisponibles = new ArrayList<>();
-    List<String> celularesdisponibles = new ArrayList<>();
-    public Cliente() {
-    }
+    private List<Producto> productosComprados;
 
-    public List<String> getProductoscomprados() {
-        return Productoscomprados;
-    }
-
-    public void setProductoscomprados(List<String> productoscomprados) {
-        Productoscomprados = productoscomprados;
-    }
-
-    public Cliente(String nombre, String marca, double precio, int cantidadstock, String nombre1, String correo, List<String> productoscomprados) {
-        super(nombre, marca, precio, cantidadstock);
-        this.nombre = nombre1;
-        this.correo = correo;
-        Productoscomprados = productoscomprados;
-
-    }
-
+    // Constructor
     public Cliente(String nombre, String correo) {
         this.nombre = nombre;
         this.correo = correo;
+        this.productosComprados = new ArrayList<>();
     }
 
+    // Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -49,31 +30,26 @@ public class Cliente extends Producto {
         this.correo = correo;
     }
 
-    public void comprarproducto() {
-        System.out.println();
+
+    public void comprarProducto(Producto producto, int cantidad) {
+        if (producto.getCantidadStock() >= cantidad) {
+            productosComprados.add(producto);
+            producto.setCantidadStock(producto.getCantidadStock() - cantidad);
+            System.out.println("Compra exitosa de " + cantidad + " unidad(es) de " + producto.getNombre());
+        } else {
+            System.out.println("Stock insuficiente para " + producto.getNombre());
+        }
     }
 
-    public void mostrarcompra() {
-        System.out.println("¿   Que producto quieres comprar?");
-        int opcionmenu;
-        Scanner input = new Scanner(System.in);
-        opcionmenu= input.nextInt();
-while (true){
-    System.out.println("Bienvenido ¿que deseas comprar? \n(1) Laptop \n(2) Celular");
-  switch (opcionmenu){
-      case 1:
-          System.out.println("Los Productos disponible en laptop son "+getCantidadstock());
-          for (int i=0; i<laptosdisponibles.size();i++);
-      case 2 :
-          System.out.println("Los Productos diposnibles en Celulares son :"+getCantidadstock());
-          for (int i=0; i<celularesdisponibles.size();i++);
-    }
-}
 
-    }
-
-    @Override
-    void mostradetalles() {
-        System.out.println("Usted compro "+getProductoscomprados());
+    public void mostrarCompra() {
+        System.out.println("Compras de " + nombre + ":");
+        double total = 0;
+        for (Producto producto : productosComprados) {
+            double precioProducto = producto.getPrecio();
+            total += precioProducto;
+            System.out.println("- " + producto.getNombre() + " (" + producto.getMarca() + "), Precio: $" + precioProducto);
+        }
+        System.out.println("Total de la compra: $" + total);
     }
 }
