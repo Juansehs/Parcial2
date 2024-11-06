@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-//juan sebastian hernandez silva/
+//juan sebastian hernandez silva//
+// id 1002277//
         public class Main extends Producto  {
             public Main(String nombre, String marca, double precio, int cantidadStock) {
                 super(nombre, marca, precio, cantidadStock);
